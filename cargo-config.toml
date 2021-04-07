@@ -1,0 +1,10 @@
+[build]
+# Target darwin by default when running Cargo
+target = "x86_64-apple-darwin"
+
+[target.x86_64-apple-darwin]
+linker = "x86_64-apple-darwinVERSION-cc"
+ar = "x86_64-apple-darwinVERSION-ar"
+
+[net]
+git-fetch-with-cli = true
