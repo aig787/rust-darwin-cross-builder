@@ -21,6 +21,7 @@ RUN apt-get update --yes \
     clang \
     cmake \
     git \
+    libz-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ENV RUST_VERSION=1.51.0
