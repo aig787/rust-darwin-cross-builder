@@ -15,7 +15,7 @@ GitHub action for building Darwin targeted rust binaries (x86_64-apple-darwin).
       ~/.cargo/git
       target
     key: darwin-cross-cargo-${{ hashFiles('**/Cargo.lock') }}
-- uses: aig787/rust-darwin-cross-builder@v1.1.1
+- uses: aig787/rust-darwin-cross-builder@v1.1.2
   with:
     args: build --release --all-features
     credentials: ${{ secrets.GIT_CREDENTIALS }}
