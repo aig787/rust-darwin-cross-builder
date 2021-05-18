@@ -1,6 +1,10 @@
 Rust Darwin Builder Action
 ========================
 
+![GitHub](https://img.shields.io/github/license/aig787/rust-darwin-cross-builder)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aig787/rust-darwin-cross-builder)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/aig787/rust-darwin-cross-builder/CI)
+
 GitHub action for building Darwin targeted rust binaries (x86_64-apple-darwin). 
 
 ```yaml
@@ -11,7 +15,7 @@ GitHub action for building Darwin targeted rust binaries (x86_64-apple-darwin).
       ~/.cargo/git
       target
     key: darwin-cross-cargo-${{ hashFiles('**/Cargo.lock') }}
-- uses: aig787/rust-darwin-cross-builder@v1.0
+- uses: aig787/rust-darwin-cross-builder@v1.1.1
   with:
     args: build --release --all-features
     credentials: ${{ secrets.GIT_CREDENTIALS }}
