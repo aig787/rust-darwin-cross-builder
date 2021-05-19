@@ -39,11 +39,7 @@ jobs:
         with:
           message: "Updated actions container to ${{ steps.tag_version.outputs.new_version }}"
           add: '["action.yml", "README.md"]'
-      - name: Push new version
-        uses: mathieudutour/github-tag-action@v5.5
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_branches: "master"
+          tag: ${{ steps.tag_version.outputs.new_tag }}
       - name: Create a GitHub release
         uses: actions/create-release@v1
         env:
