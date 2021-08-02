@@ -6,7 +6,7 @@ RUN cd /tmp && \
     make && \
     make install
 
-FROM ubuntu:focal-20210416
+FROM ubuntu:focal-20210723
 
 COPY --from=builder /opt/osxcross /opt/osxcross
 COPY --from=builder /usr/bin/mkbom /usr/bin/mkbom
