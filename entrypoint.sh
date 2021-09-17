@@ -12,8 +12,14 @@ fi
 echo "Setting up local Cargo env"
 mkdir -p .cargo
 ln -sf $CARGO_HOME/bin .cargo/
-ln -sf $CARGO_HOME/config .cargo/
-export CARGO_HOME=$PWD/.cargo
+
+if [ -f .cargo/config ]; then
+    mv .cargo/config .cargo/config.original
+    cp $CARGO_HOME/config .cargo/config
+    cat .cargo/config.original >> .cargo/config
+else 
+    cp $CARGO_HOME/config .cargo/config
+fi
 
 
 if [ "x$2" != "x" ]; then
