@@ -7,6 +7,7 @@ RUN cd /tmp && \
     make install
 
 FROM ubuntu:focal-20210827
+ARG TOOLCHAIN
 
 COPY --from=builder /opt/osxcross /opt/osxcross
 COPY --from=builder /usr/bin/mkbom /usr/bin/mkbom
@@ -24,7 +25,7 @@ RUN apt-get update --yes \
     libz-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ENV RUST_VERSION=1.55.0
+ENV RUST_VERSION=${TOOLCHAIN}
 ENV DARWIN_VERSION="18"
 ENV CC=o64-clang
 ENV CXX=o64-clang++
